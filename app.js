@@ -5,10 +5,14 @@ const submitBtn = document.querySelector("#submit-btn");
 const msgOutput = document.querySelector("#output-msg");
 
 submitBtn.addEventListener("click", function clickListener() {
-  const ip = initialPrice.value;
-  const quantity = quantityOfStocks.value;
-  const curr = currentPrice.value;
-  calculateProfitAndLoss(ip, quantity, curr);
+  const ip = Number(initialPrice.value);
+  const quantity = Number(quantityOfStocks.value);
+  const curr = Number(currentPrice.value);
+  if (ip && quantity && curr) {
+    calculateProfitAndLoss(ip, quantity, curr);
+  } else {
+    showOutput(`Please fill the boxes!!!`);
+  }
 });
 
 function calculateProfitAndLoss(initial, quantity, current) {
