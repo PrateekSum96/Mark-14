@@ -1,4 +1,34 @@
+:root {
+  --primary-color: rgb(4, 52, 114);
+  --primary-text: rgb(12, 208, 12);
+}
+body {
+  background-color: var(--primary-color);
+  color: var(--primary-text);
+}
 label {
   display: block;
   padding-bottom: 0.5rem;
+}
+h1 {
+  text-align: center;
+  font-size: 3rem;
+}
+main {
+  text-align: center;
+  font-size: 1.5rem;
+}
+#submit-btn {
+  padding: 0.5rem;
+  color: var(--primary-text);
+  background-color: var(--primary-color);
+  font-size: 1rem;
+  font-weight: bold;
+  border-color: var(--primary-text);
+  border-radius: 1rem;
+}
+input {
+  border-radius: 1rem;
+  padding: 0.3rem;
+  border-color: var(--primary-text);
 }
