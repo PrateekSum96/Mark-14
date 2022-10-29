@@ -18,7 +18,7 @@ submitBtn.addEventListener("click", function clickListener() {
 function calculateProfitAndLoss(initial, quantity, current) {
   if (initial > current) {
     const loss = (initial - current) * quantity;
-    const lossPercentage = (loss / initial) * 100;
+    const lossPercentage = ((loss / initial) * 100).toFixed(2);
 
     showOutput(
       `Hey, the loss is ${loss} and the percent is ${lossPercentage}%`
