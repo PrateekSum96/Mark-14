@@ -8,8 +8,13 @@ submitBtn.addEventListener("click", function clickListener() {
   const ip = Number(initialPrice.value);
   const quantity = Number(quantityOfStocks.value);
   const curr = Number(currentPrice.value);
+
   if (ip && quantity && curr) {
-    calculateProfitAndLoss(ip, quantity, curr);
+    if (ip > 0 && quantity > 0 && curr > 0) {
+      calculateProfitAndLoss(ip, quantity, curr);
+    } else {
+      showOutput(`You are entering NEGATIVE input!!`);
+    }
   } else {
     showOutput(`Please fill the boxes!!!`);
   }
@@ -17,15 +22,15 @@ submitBtn.addEventListener("click", function clickListener() {
 
 function calculateProfitAndLoss(initial, quantity, current) {
   if (initial > current) {
-    const loss = (initial - current) * quantity;
+    const loss = ((initial - current) * quantity).toFixed(2);
     const lossPercentage = ((loss / initial) * 100).toFixed(2);
 
     showOutput(
       `Hey, the loss is ${loss} and the percent is ${lossPercentage}%`
     );
   } else if (current > initial) {
-    const profit = (current - initial) * quantity;
-    const profitPercentage = (profit / initial) * 100;
+    const profit = ((current - initial) * quantity).toFixed(2);
+    const profitPercentage = ((profit / initial) * 100).toFixed(2);
 
     showOutput(
       `Hey, the profit is ${profit} and the percent is ${profitPercentage}%`
